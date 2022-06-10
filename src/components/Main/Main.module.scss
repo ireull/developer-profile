@@ -1,0 +1,52 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 192px;
+  section {
+    margin-left: 156px;
+    margin-top: 56px;
+  }
+  .mainTop {
+    display: flex;
+    width: 1128px;
+    height: 192px;
+    justify-content: space-between;
+    .leftWrapper {
+      display: flex;
+      width: 50%;
+    }
+    .rightWrapper {
+      display: flex;
+      width: 50%;
+    }
+    div {
+      ul {
+        li {
+          list-style-type: "\2013";
+          span,
+          a {
+            position: relative;
+            left: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+.mainBottom {
+  display: flex;
+  width: 1128px;
+  height: 200px;
+  justify-content: space-between;
+  div {
+    width: 50%;
+  }
+  .quotes {
+    position: relative;
+    display: flex;
+    div {
+      width: 50%;
+    }
+  }
+}

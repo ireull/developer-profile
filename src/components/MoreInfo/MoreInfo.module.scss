@@ -1,0 +1,36 @@
+.moreInfo {
+  display: flex;
+  width: 245px;
+  height: 152px;
+  flex-direction: column;
+  .availability {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    width: 100%;
+    h2 {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 24px;
+    }
+    span {
+      margin-top: 24px;
+    }
+  }
+  .prefEnvi {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    width: 100%;
+    margin-top: 24px;
+
+    h2 {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 24px;
+    }
+    span {
+      margin-top: 16px;
+    }
+  }
+}

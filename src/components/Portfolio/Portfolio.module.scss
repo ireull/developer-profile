@@ -1,0 +1,31 @@
+.portfolio {
+  width: 270px;
+  margin-right: 12px;
+  h2 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+  }
+  ul {
+    margin-left: 10px;
+    margin-top: 24px;
+    li {
+      a {
+        cursor: pointer;
+        max-width: 245px;
+        height: 40px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: #3483cc;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+    li:not(:last-child) {
+      margin-bottom: 8px;
+    }
+    a:hover {
+      color: #eb5757;
+    }
+  }
+}

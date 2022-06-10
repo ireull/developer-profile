@@ -1,0 +1,43 @@
+.infoWrap {
+  display: flex;
+  width: 70%;
+}
+.infoAvatar {
+  display: flex;
+  width: 164px;
+  height: 164px;
+  border-radius: 50%;
+  border: 4px solid white;
+}
+.infoList {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin-left: 50px;
+  ul {
+    margin-top: 13px;
+    li {
+      display: flex;
+      list-style-type: none;
+    }
+    li:not(:first-child) {
+      margin-top: 8px;
+    }
+    .name {
+      font-weight: 500;
+      font-size: 40px;
+      line-height: 48px;
+    }
+    .country,
+    .language {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+    }
+    .language {
+      img {
+        margin-right: 8px;
+      }
+    }
+  }
+}
