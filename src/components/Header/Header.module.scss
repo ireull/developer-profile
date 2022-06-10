@@ -42,3 +42,12 @@
     }
   }
 }
+
+@media screen and (max-width: 1300px) {
+  .info {
+    justify-content: initial;
+  }
+  .print {
+    margin-left: 100px;
+  }
+}
