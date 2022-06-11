@@ -16,8 +16,8 @@ const User = () => {
   return (
     <div className={styles.infoWrap}>
       <img src="img/user.png" alt="avatar" className={styles.infoAvatar} />
-      <div className={styles.infoList}>
-        <ul>
+      <div className={styles.infoContainer}>
+        <ul className={styles.infoList}>
           <li className={styles.name}>
             <Input value={name} handleChangeName={handleChangeName} />
           </li>

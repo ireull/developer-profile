@@ -1,14 +1,12 @@
 .main {
   display: flex;
   flex-direction: column;
-  width: 100%;
   section {
     margin-left: 156px;
     margin-top: 56px;
   }
   .mainTop {
     display: flex;
-    width: 1128px;
     justify-content: space-between;
     .leftWrapper {
       display: flex;
@@ -34,7 +32,6 @@
 }
 .mainBottom {
   display: flex;
-  width: 1128px;
   justify-content: space-between;
   div {
     width: 50%;
@@ -42,8 +39,26 @@
   .quotes {
     position: relative;
     display: flex;
-    div {
-      width: 50%;
-    }
   }
 }
+
+@media screen and (max-width: 1210px) {
+  .mainTop {
+    flex-direction: column;
+    .rightWrapper {
+      margin-top: 50px;
+    }
+  }
+  .mainBottom {
+    flex-direction: column;
+  }
+  .quotes:first-child {
+    width: 264px;
+    div {
+      margin-right: 155px;
+    }
+  }
+  .map {
+    margin-top: 100px;
+  }
+} ;

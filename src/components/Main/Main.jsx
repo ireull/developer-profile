@@ -31,7 +31,7 @@ const Main = () => {
             subtitle="There is only one good, knowledge, and one evil, ignorance."
           />
         </div>
-        <div>
+        <div className={styles.map}>
           <img src="img/map.png" alt="Map" />
         </div>
       </section>

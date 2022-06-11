@@ -6,7 +6,7 @@ const Portfolio = () => {
   return (
     <div className={styles.portfolio}>
       <h2>Portfolio</h2>
-      <ul>
+      <ul className={styles.portfolioList}>
         <li>
           <a href="!#">Bootstrap 4 Material Design (Sample Link)</a>
         </li>

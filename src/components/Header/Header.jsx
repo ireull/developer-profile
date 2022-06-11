@@ -7,10 +7,10 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.info}>
         <User />
-        <div className={styles.print}>
+        {/* <div className={styles.print}>
           <img src="img/print.svg" alt="" className={styles.printIcon} />
           <span className={styles.printText}>Print this page</span>
-        </div>
+        </div> */}
       </div>
     </header>
   );

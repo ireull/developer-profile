@@ -7,7 +7,7 @@ const Experience = () => {
   return (
     <div className={styles.experience}>
       <h2>Experience</h2>
-      <ul>
+      <ul className={styles.experienceList}>
         <li className="experienceYears">
           <div>
             <span>
