@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Input.module.scss";
 
-const Input = ({ value, handleChangeName }) => {
+const Input = ({ value, handleChangeName, skillValue, addSkill }) => {
   return (
     <input
       type="text"
