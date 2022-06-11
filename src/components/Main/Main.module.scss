@@ -1,11 +1,9 @@
 .main {
   display: flex;
   flex-direction: column;
-  section {
+  .mainTop {
     margin-left: 156px;
     margin-top: 56px;
-  }
-  .mainTop {
     display: flex;
     justify-content: space-between;
     .leftWrapper {
@@ -31,6 +29,8 @@
   }
 }
 .mainBottom {
+  margin-left: 156px;
+  margin-top: 56px;
   display: flex;
   justify-content: space-between;
   div {
@@ -60,5 +60,15 @@
   }
   .map {
     margin-top: 100px;
+    margin-bottom: 50px;
   }
-} ;
+}
+
+@media screen and (max-width: 730px) {
+  .mainTop {
+    margin-left: 50px !important;
+  }
+  .mainBottom {
+    margin-left: 50px !important;
+  }
+}

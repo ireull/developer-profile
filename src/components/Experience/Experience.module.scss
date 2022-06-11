@@ -1,6 +1,5 @@
 .experience {
   width: 50%;
-
   h2 {
     font-weight: 500;
     font-size: 20px;
@@ -13,6 +12,7 @@
     margin-top: 24px;
     li {
       span {
+        white-space: nowrap;
         transition: border 0.3s ease-in-out, color 0.3s ease-in-out;
         input {
           box-sizing: border-box;
