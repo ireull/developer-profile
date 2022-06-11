@@ -18,14 +18,14 @@
     width: 135px;
     height: 24px;
     cursor: pointer;
-    img {
+    .printIcon {
       width: 24px;
       height: 24px;
       margin-right: 8px;
       filter: saturate(0) brightness(1.5);
       transition: filter 0.3s ease-in-out;
     }
-    span {
+    .printText {
       font-weight: 400;
       font-size: 16px;
       line-height: 24px;
@@ -33,10 +33,10 @@
       transition: color 0.1s ease-in-out;
     }
     &:hover {
-      span {
+      .printText {
         color: #eb5757;
       }
-      img {
+      .printIcon {
         filter: saturate(1) brightness(1);
       }
     }

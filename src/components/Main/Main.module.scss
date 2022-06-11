@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 192px;
   section {
     margin-left: 156px;
     margin-top: 56px;
@@ -10,7 +9,6 @@
   .mainTop {
     display: flex;
     width: 1128px;
-    height: 192px;
     justify-content: space-between;
     .leftWrapper {
       display: flex;
@@ -37,7 +35,6 @@
 .mainBottom {
   display: flex;
   width: 1128px;
-  height: 200px;
   justify-content: space-between;
   div {
     width: 50%;

@@ -8,8 +8,8 @@ const Header = () => {
       <div className={styles.info}>
         <User />
         <div className={styles.print}>
-          <img src="img/print.svg" alt="" />
-          <span>Print this page</span>
+          <img src="img/print.svg" alt="" className={styles.printIcon} />
+          <span className={styles.printText}>Print this page</span>
         </div>
       </div>
     </header>

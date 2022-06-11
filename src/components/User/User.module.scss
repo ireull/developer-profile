@@ -40,4 +40,22 @@
       }
     }
   }
+  .name {
+    input {
+      width: 360px;
+      height: 48px;
+      font-weight: 500;
+      font-size: 40px;
+      line-height: 48px;
+    }
+  }
+  .country {
+    input {
+      width: 360px;
+      height: 24px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
 }
