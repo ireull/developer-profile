@@ -1,16 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
-import Input from "../../ui/Input/Input";
-import Skill from "../Skill/Skill";
 
+import Skill from "../Skill/Skill";
 import styles from "./SkillList.module.scss";
 
 const SkillList = () => {
+
   const [skills, setSkills] = useState([
     { name: "PHP" },
     { name: "Ruby" },
     { name: "JavaScript" },
   ]);
+
   const [skill, setSkill] = useState("");
+  
   const [isAddSkillActive, setIsAddSkillActive] = useState(false);
 
   const addSkill = (e) => {

@@ -44,3 +44,14 @@
     }
   }
 }
+@media screen and (max-width: 1149px) {
+  .experience {
+    width: 35% !important;
+  }
+}
+
+@media screen and (max-width: 539px) {
+  .experience {
+    margin-top: 50px;
+  }
+}

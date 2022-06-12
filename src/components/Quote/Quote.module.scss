@@ -2,6 +2,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  width: 50%;
   h2 {
     white-space: nowrap;
     font-weight: 500;
@@ -32,5 +33,10 @@
       right: -15px;
       transform: rotate(180deg);
     }
+  }
+}
+@media screen and (max-width: 1149px) {
+  .quote {
+    width: 35%;
   }
 }

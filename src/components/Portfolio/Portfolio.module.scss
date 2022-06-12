@@ -33,4 +33,11 @@
     margin-right: 20px;
     width: 264px;
   }
-} ;
+}
+
+@media screen and (max-width: 1149px) {
+  .portfolio {
+    margin-right: 47px;
+    width: 35%;
+  }
+}

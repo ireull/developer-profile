@@ -15,7 +15,9 @@ const User = () => {
   };
   return (
     <div className={styles.infoWrap}>
-      <img src="img/user.png" alt="avatar" className={styles.infoAvatar} />
+      <div className={styles.infoAvatar}>
+        <img src="img/user.png" alt="avatar" />
+      </div>
       <div className={styles.infoContainer}>
         <ul className={styles.infoList}>
           <li className={styles.name}>
