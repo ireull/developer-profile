@@ -6,13 +6,15 @@ import Context from "./context/context";
 
 function App() {
   const [skills, setSkills] = useState([
-    { name: "PHP", exp: 2 },
-    { name: "Ruby", exp: 4 },
+    { name: "Ruby", exp: 2 },
+    { name: "PHP", exp: 6 },
     { name: "JavaScript", exp: 4 },
   ]);
+  
+  const skillSort = skills.sort((a, b) => (a.exp > b.exp ? -1 : 1));
 
   return (
-    <Context.Provider value={{ skills, setSkills }}>
+    <Context.Provider value={{ skillSort, setSkills }}>
       <div className="app">
         <div className="app-wrapper">
           <Header />

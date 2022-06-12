@@ -6,7 +6,7 @@ import Skill from "../Skill/Skill";
 import styles from "./SkillList.module.scss";
 
 const SkillList = () => {
-  const { skills, setSkills } = useContext(Context);
+  const { skillSort, setSkills } = useContext(Context);
   const [skill, setSkill] = useState("");
   const [isAddSkillActive, setIsAddSkillActive] = useState(false);
   const inputRef = useRef(null);
@@ -20,7 +20,7 @@ const SkillList = () => {
   const addSkill = (e) => {
     const newSkill = { name: skill, exp: "..." };
     if (e.key === "Enter") {
-      setSkills([...skills, newSkill]);
+      setSkills([...skillSort, newSkill]);
       setIsAddSkillActive(false);
       setSkill("");
     }
@@ -33,11 +33,11 @@ const SkillList = () => {
   };
 
   const deleteSkill = (name) => {
-    setSkills(skills.filter((skill) => skill.name !== name));
+    setSkills(skillSort.filter((skill) => skill.name !== name));
   };
   return (
     <div className={styles.skillList}>
-      {skills.map((skill) => (
+      {skillSort.map((skill) => (
         <Skill key={skill.name} name={skill.name} deleteSkill={deleteSkill} />
       ))}
       {!isAddSkillActive && (
