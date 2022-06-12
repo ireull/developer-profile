@@ -31,7 +31,7 @@ const User = () => {
         setNameDirty(false);
         break;
       case "country":
-        setCountryDirty(true);
+        setCountryDirty(false);
         break;
     }
   };
@@ -50,7 +50,7 @@ const User = () => {
   const сountryHandler = (e) => {
     const validate = /[^A-Za-z 0-9]/i;
     setCountry(String(e.target.value).replace(validate, ""));
-    
+
     if (!e.target.value || validate.test(e.target.value)) {
       setCountryError(true);
     } else {
