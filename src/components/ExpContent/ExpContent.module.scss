@@ -1,0 +1,35 @@
+.experienceYears {
+  span {
+    white-space: nowrap;
+    transition: border 0.3s ease-in-out, color 0.3s ease-in-out;
+    input {
+      box-sizing: border-box;
+      max-width: 55px;
+      height: 20px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      color: #3483cc;
+      &:hover {
+        border: none;
+        background: none;
+        color: #eb5757;
+      }
+      &:focus {
+        background: rgba(0, 0, 0, 0.06);
+        color: black;
+      }
+    }
+  }
+  span:nth-child(1) {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+.textWrap {
+  display: flex;
+  input {
+    margin-left: 8px;
+  }
+}

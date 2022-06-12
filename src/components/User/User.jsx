@@ -1,18 +1,63 @@
 import React, { useState } from "react";
 import SkillList from "../../components/SkillList/SkillList";
 import Input from "../../ui/Input/Input";
+import { Correct } from "../InputInfo/Correct/Correct";
+import Incorrect from "../InputInfo/Incorrect/Incorrect";
 import styles from "./User.module.scss";
 
 const User = () => {
   const [name, setName] = useState("John Smith");
-  const [country, setCountry] = useState("Portland, Oregon, USA");
+  const [nameDirty, setNameDirty] = useState(false);
+  const [nameError, setNameError] = useState(false);
 
-  const handleChangeName = (e) => {
-    setName(e);
+  const [country, setCountry] = useState("Portland, Oregon, USA");
+  const [countryDirty, setCountryDirty] = useState(false);
+  const [countryError, setCountryError] = useState(false);
+
+  const focusHandler = (event) => {
+    switch (event.target.name) {
+      case "name":
+        setNameDirty(true);
+        break;
+      case "country":
+        setCountryDirty(true);
+        break;
+    }
   };
-  const handleChangeCountry = (e) => {
-    setCountry(e);
+
+  const blurHandler = (event) => {
+    switch (event.target.name) {
+      case "name":
+        setNameDirty(false);
+        break;
+      case "country":
+        setCountryDirty(true);
+        break;
+    }
   };
+
+  const nameHandler = (e) => {
+    const validate = /[^A-Za-z 0-9]/i;
+    setName(String(e.target.value).replace(validate, ""));
+
+    if (!e.target.value || validate.test(e.target.value)) {
+      setNameError(true);
+    } else {
+      setNameError(false);
+    }
+  };
+
+  const сountryHandler = (e) => {
+    const validate = /[^A-Za-z 0-9]/i;
+    setCountry(String(e.target.value).replace(validate, ""));
+    
+    if (!e.target.value || validate.test(e.target.value)) {
+      setCountryError(true);
+    } else {
+      setCountryError(false);
+    }
+  };
+
   return (
     <div className={styles.infoWrap}>
       <div className={styles.infoAvatar}>
@@ -21,10 +66,34 @@ const User = () => {
       <div className={styles.infoContainer}>
         <ul className={styles.infoList}>
           <li className={styles.name}>
-            <Input value={name} handleChangeName={handleChangeName} />
+            <div className={styles.inputWrap}>
+              <input
+                onFocus={(e) => focusHandler(e)}
+                onBlur={(e) => blurHandler(e)}
+                value={name}
+                type="text"
+                name="name"
+                className={styles.input}
+                onChange={(e) => nameHandler(e)}
+              />
+              {nameError && nameDirty && <Incorrect />}
+              {nameDirty && !nameError && <Correct />}
+            </div>
           </li>
           <li className={styles.country}>
-            <Input value={country} handleChangeName={handleChangeCountry} />
+            <div className={styles.inputWrap}>
+              <input
+                onFocus={(e) => focusHandler(e)}
+                onBlur={(e) => blurHandler(e)}
+                value={country}
+                type="text"
+                name="country"
+                className={styles.input}
+                onChange={(e) => сountryHandler(e)}
+              />
+              {countryError && countryDirty && <Incorrect />}
+              {!countryError && countryDirty && <Correct />}
+            </div>
           </li>
           <li className={styles.language}>
             <img src="img/flag.png" alt="flag" />

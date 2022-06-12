@@ -1,3 +1,7 @@
+.wrap {
+  position: relative;
+  display: flex;
+}
 .customInput {
   height: 24px;
   cursor: pointer;
@@ -13,3 +17,4 @@
     box-shadow: 0px 1px 0px 0px black;
   }
 }
+
