@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SkillList from "../../components/SkillList/SkillList";
-import Input from "../../ui/Input/Input";
+
 import { Correct } from "../InputInfo/Correct/Correct";
 import Incorrect from "../InputInfo/Incorrect/Incorrect";
 import styles from "./User.module.scss";
@@ -10,7 +10,7 @@ const User = () => {
   const [nameDirty, setNameDirty] = useState(false);
   const [nameError, setNameError] = useState(false);
 
-  const [country, setCountry] = useState("Portland, Oregon, USA");
+  const [country, setCountry] = useState("USA");
   const [countryDirty, setCountryDirty] = useState(false);
   const [countryError, setCountryError] = useState(false);
 
@@ -38,8 +38,8 @@ const User = () => {
 
   const nameHandler = (e) => {
     const validate = /[^A-Za-z 0-9]/i;
-    setName(String(e.target.value).replace(validate, ""));
-
+    setName(String(e.target.value));
+    
     if (!e.target.value || validate.test(e.target.value)) {
       setNameError(true);
     } else {
@@ -49,7 +49,7 @@ const User = () => {
 
   const сountryHandler = (e) => {
     const validate = /[^A-Za-z 0-9]/i;
-    setCountry(String(e.target.value).replace(validate, ""));
+    setCountry(String(e.target.value));
 
     if (!e.target.value || validate.test(e.target.value)) {
       setCountryError(true);

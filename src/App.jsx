@@ -10,11 +10,11 @@ function App() {
     { name: "PHP", exp: 6 },
     { name: "JavaScript", exp: 4 },
   ]);
-  
-  const skillSort = skills.sort((a, b) => (a.exp > b.exp ? -1 : 1));
+
+  const skillsSort = skills.sort((a, b) => (a.exp > b.exp ? -1 : 1));
 
   return (
-    <Context.Provider value={{ skillSort, setSkills }}>
+    <Context.Provider value={{ skillsSort, setSkills, skills }}>
       <div className="app">
         <div className="app-wrapper">
           <Header />

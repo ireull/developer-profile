@@ -3,11 +3,11 @@ import Context from "../../context/context";
 import ExpContent from "../ExpContent/ExpContent";
 
 const ExpList = () => {
-  const { skillSort, setSkills } = useContext(Context);
+  const { skillsSort, setSkills } = useContext(Context);
 
   return (
     <>
-      {skillSort.map((skill) => (
+      {skillsSort.map((skill) => (
         <ExpContent key={skill.name} name={skill.name} exp={skill.exp} />
       ))}
     </>
