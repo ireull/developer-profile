@@ -6,6 +6,7 @@ import SampleCode from "../SampleCode/SampleCode";
 import Quote from "../Quote/Quote";
 
 import styles from "./Main.module.scss";
+import YMap from "../Map/YMap";
 
 const Main = () => {
   return (
@@ -31,9 +32,7 @@ const Main = () => {
             subtitle="There is only one good, knowledge, and one evil, ignorance."
           />
         </div>
-        <div className={styles.map}>
-          <img src="img/map.png" alt="Map" />
-        </div>
+        <YMap />
       </section>
     </main>
   );
