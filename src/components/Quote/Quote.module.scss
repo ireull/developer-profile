@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   width: 50%;
-  
+
   h2 {
     white-space: nowrap;
     font-weight: 500;
@@ -34,7 +34,6 @@
   opacity: 0.2;
   background: url("../../assets/commas.png") no-repeat;
 }
-
 .content::after {
   content: " ";
   position: absolute;

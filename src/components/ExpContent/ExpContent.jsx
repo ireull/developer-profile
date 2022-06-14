@@ -6,7 +6,6 @@ import styles from "./ExpContent.module.scss";
 const ExpContent = ({ name, exp }) => {
   const { skills, setSkills } = useContext(UserContext);
   const [newExp, setNewExp] = useState(exp);
-  const [newExpErr, setNewExpErr] = useState(false);
   const [isInputActive, setIsInputActive] = useState(false);
   const inputRef = useRef(null);
 
@@ -53,7 +52,7 @@ const ExpContent = ({ name, exp }) => {
                 type="number"
                 onBlur={handleBlur}
                 onChange={changeExp}
-                placeholder={newExp}
+                value={newExp}
               />
             ) : (
               <span className={styles.expInfo}>{newExp} years</span>

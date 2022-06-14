@@ -7,19 +7,33 @@ import Avatar from "../Avatar/Avatar";
 import { Correct } from "../InputInfo/Correct/Correct";
 import Incorrect from "../InputInfo/Incorrect/Incorrect";
 import styles from "./User.module.scss";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 const User = () => {
   const { setLatitude, setLongitude, setIsFetching } = useContext(UserContext);
 
   const [name, setName] = useState("John Smith");
-  const [validName, setValidName] = useState("John Smith");
+  const [validName, setValidName] = useLocalStorage("John Smith", "user-name");
   const [nameDirty, setNameDirty] = useState(false);
   const [nameError, setNameError] = useState(false);
 
   const [address, setAddress] = useState("Portland, Oregon, USA");
-  const [validAddress, setValidAddress] = useState("Portland, Oregon, USA");
+  const [validAddress, setValidAddress] = useLocalStorage(
+    "Portland, Oregon, USA",
+    "user-address"
+  );
   const [addressDirty, setAddressDirty] = useState(false);
   const [addressError, setAddressError] = useState(false);
+
+  useEffect(() => {
+    updateCoordinates();
+  }, []);
+
+  useEffect(() => {
+    if (nameDirty) {
+      document.title = `${validName} • Developer profile`;
+    }
+  }, [nameDirty]);
 
   const updateCoordinates = () => {
     const encodedAddress = encodeURI(address);
@@ -45,16 +59,6 @@ const User = () => {
       .catch((err) => console.log(err));
   };
 
-  useEffect(() => {
-    updateCoordinates();
-  }, []);
-
-  useEffect(() => {
-    if (nameDirty) {
-      document.title = `${validName} • Developer profile`;
-    }
-  }, [nameDirty]);
-
   const focusHandler = (event) => {
     switch (event.target.name) {
       case "name":
@@ -66,22 +70,23 @@ const User = () => {
     }
   };
 
+  /** focus out */
+
   const blurHandler = (event) => {
     switch (event.target.name) {
       case "name":
-        setName(validName);
         setNameDirty(false);
         break;
       case "address":
-        setAddress(validAddress);
         setAddressDirty(false);
         updateCoordinates();
         break;
     }
   };
+  /** Validation */
 
   const nameHandler = (e) => {
-    const validate = /[^A-Za-z 0-9]/i;
+    const validate = /[^A-Za-z 0-9 А-Яа-я]/i;
     setName(String(e.target.value));
 
     if (!e.target.value || validate.test(e.target.value)) {
@@ -93,7 +98,7 @@ const User = () => {
   };
 
   const сountryHandler = (e) => {
-    const validate = /[^A-Za-z , 0-9]/i;
+    const validate = /[^A-Za-z , 0-9 А-Яа-я]/i;
     setAddress(String(e.target.value));
 
     if (!e.target.value || validate.test(e.target.value)) {
