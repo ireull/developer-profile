@@ -1,6 +1,6 @@
 import React from "react";
-import { Correct } from "../../components/InputInfo/Correct/Correct";
-import Incorrect from "../../components/InputInfo/Incorrect/Incorrect";
+import { Correct } from "../../InputInfo/Correct/Correct";
+import Incorrect from "../../InputInfo/Incorrect/Incorrect";
 
 import styles from "./Input.module.scss";
 

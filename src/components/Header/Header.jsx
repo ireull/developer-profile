@@ -7,11 +7,18 @@ import UserContext from "../../context/UserContext";
 
 const Header = () => {
   const { pdfRef } = useContext(UserContext);
+
+  const options = {
+    orientation: "landscape",
+    unit: "in",
+    format: [10, 15],
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.info}>
         <User />
-        <Pdf targetRef={pdfRef} filename="user.pdf">
+        <Pdf targetRef={pdfRef} filename="user.pdf" options={options}>
           {({ toPdf }) => (
             <a className={styles.print} onClick={toPdf}>
               <div className={styles.printIcon} />

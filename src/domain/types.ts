@@ -2,38 +2,39 @@ interface User {
     id:number;
     fullName: string;
     language:string;
-    skills:ISkill[]
+    skills:Skill[]
     picture: string;
-    portfolio:IPortfolio[]
-    location:ILocation[];
+    portfolio:Portfolio[]
+    location:Location[];
     samplCode: string;
     availability:string;
     environment: Environment[];
-    favoriteQuotes : IQuote[];
+    favoriteQuotes : Quote[];
 }
 
-interface ISkill{
+interface Skill {
     name:string;
     exp?:number;
 }
 
-interface IPortfolio{
+interface Portfolio {
     title:string;
     url:string;
 }
 
-interface ILocation{
+interface Location {
     long:string;
     lat:string;
 }
 
 type Environment = string;
 
-interface IQuote {
+interface Quote {
     title:string;
     text:string;
 }
+
 interface IMap {
-    long:string;
+    lng:string;
     lat:string;
 }
