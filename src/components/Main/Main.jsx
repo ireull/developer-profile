@@ -5,8 +5,9 @@ import Portfolio from "../Portfolio/Portfolio";
 import SampleCode from "../SampleCode/SampleCode";
 import Quote from "../Quote/Quote";
 
-import styles from "./Main.module.scss";
 import YMap from "../Map/YMap";
+
+import styles from "./Main.module.scss";
 
 const Main = () => {
   return (

@@ -1,14 +1,17 @@
 .portfolio {
   width: 50%;
+
   h2 {
     font-weight: 500;
     font-size: 20px;
     line-height: 24px;
   }
+
   .portfolioList {
     width: 260px;
     margin-left: 10px;
     margin-top: 24px;
+
     li {
       a {
         cursor: pointer;
@@ -19,9 +22,11 @@
         transition: all 0.3s ease-in-out;
       }
     }
+
     li:not(:last-child) {
       margin-bottom: 8px;
     }
+    
     a:hover {
       color: #eb5757;
     }

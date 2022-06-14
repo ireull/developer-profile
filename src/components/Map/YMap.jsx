@@ -9,7 +9,10 @@ const YMap = () => {
     <div className={styles.map}>
       <YMaps>
         <div>
-          <Map defaultState={{ center: [55.75, 37.57], zoom: 9 }} />
+          <Map
+            width="100%"
+            defaultState={{ center: [55.75, 37.57], zoom: 9 }}
+          />
         </div>
       </YMaps>
     </div>

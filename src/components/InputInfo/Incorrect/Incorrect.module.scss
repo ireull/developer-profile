@@ -1,6 +1,7 @@
 .incorrectWrap {
   position: relative;
 }
+
 .incorrect {
   display: flex;
   z-index: 0;
@@ -15,6 +16,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .incorrectIcon {
   display: flex;
   position: relative;
@@ -31,14 +33,17 @@
   border: none;
   background: rgba($color: #b3bac0, $alpha: 0);
   outline: none;
+
   &:hover {
     background: rgba(0, 0, 0, 0.06);
   }
+
   &:focus {
     background: rgba(0, 0, 0, 0.06);
     box-shadow: 0px 1px 0px 0px #eb5757;
   }
 }
+
 .errorText {
   display: flex;
   position: absolute;

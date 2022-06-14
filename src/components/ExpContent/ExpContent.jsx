@@ -1,11 +1,10 @@
 import React, { useState, useRef, useEffect, useContext } from "react";
-import Context from "../../context/context";
-import Incorrect from "../InputInfo/Incorrect/Incorrect";
+import UserContext from "../../context/UserContext";
 
 import styles from "./ExpContent.module.scss";
 
 const ExpContent = ({ name, exp }) => {
-  const { skills, setSkills } = useContext(Context);
+  const { skills, setSkills } = useContext(UserContext);
   const [newExp, setNewExp] = useState(exp);
   const [newExpErr, setNewExpErr] = useState(false);
   const [isInputActive, setIsInputActive] = useState(false);
@@ -22,17 +21,20 @@ const ExpContent = ({ name, exp }) => {
     return;
   };
 
+  const updateSkills = skills.map((item) => {
+    if (item.name === name) {
+      return { ...item, ["exp"]: Number(newExp) };
+    }
+    return item;
+  });
+
   useEffect(() => {
     if (isInputActive) {
       inputRef.current.focus();
     }
-    const updateSkills = skills.map((item) => {
-      if (item.name === name) {
-        return { ...item, ["exp"]: Number(newExp) };
-      }
-      return item;
-    });
-    setSkills([...updateSkills]);
+    if (!isInputActive) {
+      setSkills([...updateSkills]);
+    }
   }, [isInputActive, newExp]);
 
   return (
@@ -51,6 +53,7 @@ const ExpContent = ({ name, exp }) => {
                 type="number"
                 onBlur={handleBlur}
                 onChange={changeExp}
+                placeholder={newExp}
               />
             ) : (
               <span className={styles.expInfo}>{newExp} years</span>

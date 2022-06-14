@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
-import Context from "../../context/context";
+import UserContext from "../../context/UserContext";
+
 import ExpContent from "../ExpContent/ExpContent";
 
 const ExpList = () => {
-  const { skillsSort, setSkills } = useContext(Context);
+  const { skillsSort, setSkills } = useContext(UserContext);
 
   return (
     <>

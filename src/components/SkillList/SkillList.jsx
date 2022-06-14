@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import Context from "../../context/context";
+import UserContext from "../../context/UserContext";
 
 import Skill from "../Skill/Skill";
 
 import styles from "./SkillList.module.scss";
 
 const SkillList = () => {
-  const { skillsSort, setSkills } = useContext(Context);
+  const { skillsSort, setSkills } = useContext(UserContext);
   const [skill, setSkill] = useState("");
   const [isAddSkillActive, setIsAddSkillActive] = useState(false);
   const inputRef = useRef(null);
@@ -19,12 +19,13 @@ const SkillList = () => {
 
   const addSkill = (e) => {
     if (e.key === "Enter") {
-      const newSkill = { name: skill, exp: "..." };
+      const newSkill = { name: skill, exp: "Fill your experience" };
       setSkills([...skillsSort, newSkill]);
       setIsAddSkillActive(false);
       setSkill("");
     }
   };
+
   const skillValue = (e) => {
     setSkill(e.target.value);
   };
@@ -35,15 +36,14 @@ const SkillList = () => {
   const deleteSkill = (name) => {
     setSkills(skillsSort.filter((skill) => skill.name !== name));
   };
+
   return (
     <div className={styles.skillList}>
       {skillsSort.map((skill) => (
         <Skill key={skill.name} name={skill.name} deleteSkill={deleteSkill} />
       ))}
       {!isAddSkillActive && (
-        <div className={styles.addSkill} onClick={toggleSkillActive}>
-          <img src="img/plus.svg" alt="plus" />
-        </div>
+        <button className={styles.addSkill} onClick={toggleSkillActive} />
       )}
       {isAddSkillActive && (
         <div className={styles.customInput}>

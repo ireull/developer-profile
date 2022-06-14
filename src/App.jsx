@@ -2,7 +2,7 @@ import { useState } from "react";
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
 
-import Context from "./context/context";
+import UserContext from "./context/UserContext";
 
 function App() {
   const [skills, setSkills] = useState([
@@ -14,14 +14,14 @@ function App() {
   const skillsSort = skills.sort((a, b) => (a.exp > b.exp ? -1 : 1));
 
   return (
-    <Context.Provider value={{ skillsSort, setSkills, skills }}>
+    <UserContext.Provider value={{ skillsSort, setSkills, skills }}>
       <div className="app">
         <div className="app-wrapper">
           <Header />
           <Main />
         </div>
       </div>
-    </Context.Provider>
+    </UserContext.Provider>
   );
 }
 

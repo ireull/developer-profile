@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import SkillList from "../../components/SkillList/SkillList";
+import Avatar from "../Avatar/Avatar";
 
 import { Correct } from "../InputInfo/Correct/Correct";
 import Incorrect from "../InputInfo/Incorrect/Incorrect";
+
 import styles from "./User.module.scss";
 
 const User = () => {
@@ -39,7 +41,7 @@ const User = () => {
   const nameHandler = (e) => {
     const validate = /[^A-Za-z 0-9]/i;
     setName(String(e.target.value));
-    
+
     if (!e.target.value || validate.test(e.target.value)) {
       setNameError(true);
     } else {
@@ -60,9 +62,7 @@ const User = () => {
 
   return (
     <div className={styles.infoWrap}>
-      <div className={styles.infoAvatar}>
-        <img src="img/user.png" alt="avatar" />
-      </div>
+      <Avatar />
       <div className={styles.infoContainer}>
         <ul className={styles.infoList}>
           <li className={styles.name}>

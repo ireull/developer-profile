@@ -7,6 +7,7 @@
   .mainTop {
     display: flex;
     justify-content: space-between;
+    
     div {
       ul {
         li {
@@ -42,7 +43,6 @@
     position: relative;
     display: flex;
   }
-
 }
 
 @media screen and (max-width: 1270px) {
@@ -73,11 +73,6 @@
   .quotes {
     justify-content: space-between;
     width: 100% !important;
-  }
-  .map {
-    width: 100% !important;
-    margin-top: 100px;
-    margin-bottom: 50px;
   }
 }
 

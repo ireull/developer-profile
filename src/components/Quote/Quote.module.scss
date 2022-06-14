@@ -3,12 +3,14 @@
   display: flex;
   flex-direction: column;
   width: 50%;
+  
   h2 {
     white-space: nowrap;
     font-weight: 500;
     font-size: 24px;
     line-height: 24px;
   }
+
   .content {
     position: relative;
     z-index: 10;
@@ -19,21 +21,30 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    img {
-      position: absolute;
-      opacity: 0.2;
-    }
-    img:first-child {
-      top: -20px;
-      left: -15px;
-    }
-    img:last-child {
-      z-index: -1;
-      top: 30px;
-      right: -15px;
-      transform: rotate(180deg);
-    }
   }
+}
+
+.content::before {
+  content: " ";
+  position: absolute;
+  width: 40px;
+  height: 32px;
+  left: -19px;
+  top: -23px;
+  opacity: 0.2;
+  background: url("../../assets/commas.png") no-repeat;
+}
+
+.content::after {
+  content: " ";
+  position: absolute;
+  width: 40px;
+  height: 32px;
+  left: 204px;
+  transform: rotate(180deg);
+  top: 32px;
+  opacity: 0.2;
+  background: url("../../assets/commas.png") no-repeat;
 }
 @media screen and (max-width: 1149px) {
   .quote {

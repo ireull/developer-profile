@@ -4,6 +4,7 @@
   justify-content: space-between;
   background: rgba($color: #b3bac0, $alpha: 0.2);
 }
+
 .info {
   display: flex;
   position: relative;
@@ -11,38 +12,40 @@
   margin-left: 156px;
   margin-top: 35px;
   justify-content: space-between;
+}
 
-  .print {
-    display: flex;
-    white-space: nowrap;
-    margin-right: 156px;
-    cursor: pointer;
-
-    .printIcon {
-      width: 24px;
-      height: 24px;
-      margin-right: 8px;
-      filter: saturate(0) brightness(1.5);
-      transition: filter 0.3s ease-in-out;
-    }
-
+.print {
+  display: flex;
+  border: none;
+  height: 15%;
+  white-space: nowrap;
+  margin-right: 156px;
+  cursor: pointer;
+  
+  &:hover {
     .printText {
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 24px;
-      color: #3483cc;
-      transition: color 0.1s ease-in-out;
+      color: #eb5757;
     }
-    &:hover {
-      .printText {
-        color: #eb5757;
-      }
-
-      .printIcon {
-        filter: saturate(1) brightness(1);
-      }
+    .printIcon {
+      filter: saturate(1) brightness(1);
     }
   }
+}
+
+.printIcon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  filter: saturate(0) brightness(1.5);
+  transition: filter 0.3s ease-in-out;
+}
+
+.printText {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #3483cc;
+  transition: color 0.1s ease-in-out;
 }
 @media screen and (max-width: 1270px) {
   .info {

@@ -19,11 +19,13 @@
   font-size: 16px;
   line-height: 20px;
   color: #3483cc;
+
   &:hover {
     border: none;
     background: none;
     color: #eb5757;
   }
+
   &:focus {
     background: rgba(0, 0, 0, 0.06);
     box-shadow: 0px 1px 0px 0px black;
@@ -39,19 +41,23 @@
   line-height: 20px;
   color: #3483cc;
   border-bottom: 1px dashed #3483cc;
+
   &:hover {
     border: none;
     background: none;
     color: #eb5757;
   }
+
   &:focus {
     background: rgba(0, 0, 0, 0.06);
     box-shadow: 0px 1px 0px 0px black;
+    
     &:hover {
       color: #3483cc;
     }
   }
 }
+
 .wrapperError {
   display: flex;
   position: relative;
