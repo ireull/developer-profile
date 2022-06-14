@@ -21,7 +21,8 @@
   white-space: nowrap;
   margin-right: 156px;
   cursor: pointer;
-  
+  transition: color 0.3s ease;
+
   &:hover {
     .printText {
       color: #eb5757;
@@ -33,11 +34,13 @@
 }
 
 .printIcon {
+  display: block;
   width: 24px;
   height: 24px;
+  background: url(../../assets/print.svg) center;
   margin-right: 8px;
   filter: saturate(0) brightness(1.5);
-  transition: filter 0.3s ease-in-out;
+  transition: filter 0.3s ease;
 }
 
 .printText {

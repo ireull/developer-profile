@@ -1,5 +1,7 @@
 .map {
   width: 50%;
+  overflow: hidden;
+  border-radius: 10px;
 }
 
 @media screen and (max-width: 1149px) {

@@ -12,7 +12,7 @@ const User = () => {
   const [nameDirty, setNameDirty] = useState(false);
   const [nameError, setNameError] = useState(false);
 
-  const [country, setCountry] = useState("USA");
+  const [country, setCountry] = useState("Portland, Oregon, USA");
   const [countryDirty, setCountryDirty] = useState(false);
   const [countryError, setCountryError] = useState(false);
 

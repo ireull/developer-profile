@@ -9,7 +9,7 @@ const Header = () => {
       <div className={styles.info}>
         <User />
         <button className={styles.print}>
-          <img src="img/print.svg" alt="" className={styles.printIcon} />
+          <div className={styles.printIcon} />
           <span className={styles.printText}>Print this page</span>
         </button>
       </div>
@@ -18,3 +18,6 @@ const Header = () => {
 };
 
 export default Header;
+{
+  /* <img src="img/print.svg" alt="" className={styles.printIcon} /> */
+}
