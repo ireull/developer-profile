@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
 
@@ -11,12 +12,31 @@ function App() {
     { name: "JavaScript", exp: 4 },
   ]);
 
+  const [latitude, setLatitude] = useState();
+  const [longitude, setLongitude] = useState();
+  const [isFetching, setIsFetching] = useState(false);
+
+  const pdfRef = useRef(null);
+
   const skillsSort = skills.sort((a, b) => (a.exp > b.exp ? -1 : 1));
 
   return (
-    <UserContext.Provider value={{ skillsSort, setSkills, skills }}>
+    <UserContext.Provider
+      value={{
+        skillsSort,
+        setSkills,
+        skills,
+        pdfRef,
+        setLatitude,
+        setLongitude,
+        latitude,
+        longitude,
+        isFetching,
+        setIsFetching,
+      }}
+    >
       <div className="app">
-        <div className="app-wrapper">
+        <div className="app-wrapper" ref={pdfRef}>
           <Header />
           <Main />
         </div>

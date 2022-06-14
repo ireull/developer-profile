@@ -1,0 +1,17 @@
+.marker {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: red;
+}
+.center {
+  position: relative;
+  width: 7px;
+  height: 7px;
+  background: white;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}

@@ -1,28 +1,67 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import UserContext from "../../context/UserContext";
+
 import SkillList from "../../components/SkillList/SkillList";
 import Avatar from "../Avatar/Avatar";
 
 import { Correct } from "../InputInfo/Correct/Correct";
 import Incorrect from "../InputInfo/Incorrect/Incorrect";
-
 import styles from "./User.module.scss";
 
 const User = () => {
+  const { setLatitude, setLongitude, setIsFetching } = useContext(UserContext);
+
   const [name, setName] = useState("John Smith");
+  const [validName, setValidName] = useState("John Smith");
   const [nameDirty, setNameDirty] = useState(false);
   const [nameError, setNameError] = useState(false);
 
-  const [country, setCountry] = useState("Portland, Oregon, USA");
-  const [countryDirty, setCountryDirty] = useState(false);
-  const [countryError, setCountryError] = useState(false);
+  const [address, setAddress] = useState("Portland, Oregon, USA");
+  const [validAddress, setValidAddress] = useState("Portland, Oregon, USA");
+  const [addressDirty, setAddressDirty] = useState(false);
+  const [addressError, setAddressError] = useState(false);
+
+  const updateCoordinates = () => {
+    const encodedAddress = encodeURI(address);
+
+    fetch(
+      `https://trueway-geocoding.p.rapidapi.com/Geocode?address=${encodedAddress}&language=en`,
+      {
+        method: "GET",
+        headers: {
+          "X-RapidAPI-Key":
+            "a85a611b53msh1701a7695c9c5bdp1cf052jsn2c60298ef93a",
+          "X-RapidAPI-Host": "trueway-geocoding.p.rapidapi.com",
+        },
+      }
+    )
+      .then((response) => response.json())
+      .then(({ results }) => {
+        setIsFetching(false);
+        setLatitude(results[0].location.lat);
+        setLongitude(results[0].location.lng);
+        setIsFetching(true);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    updateCoordinates();
+  }, []);
+
+  useEffect(() => {
+    if (nameDirty) {
+      document.title = `${validName} • Developer profile`;
+    }
+  }, [nameDirty]);
 
   const focusHandler = (event) => {
     switch (event.target.name) {
       case "name":
         setNameDirty(true);
         break;
-      case "country":
-        setCountryDirty(true);
+      case "address":
+        setAddressDirty(true);
         break;
     }
   };
@@ -30,10 +69,13 @@ const User = () => {
   const blurHandler = (event) => {
     switch (event.target.name) {
       case "name":
+        setName(validName);
         setNameDirty(false);
         break;
-      case "country":
-        setCountryDirty(false);
+      case "address":
+        setAddress(validAddress);
+        setAddressDirty(false);
+        updateCoordinates();
         break;
     }
   };
@@ -46,17 +88,19 @@ const User = () => {
       setNameError(true);
     } else {
       setNameError(false);
+      setValidName(String(e.target.value));
     }
   };
 
   const сountryHandler = (e) => {
-    const validate = /[^A-Za-z 0-9]/i;
-    setCountry(String(e.target.value));
+    const validate = /[^A-Za-z , 0-9]/i;
+    setAddress(String(e.target.value));
 
     if (!e.target.value || validate.test(e.target.value)) {
-      setCountryError(true);
+      setAddressError(true);
     } else {
-      setCountryError(false);
+      setAddressError(false);
+      setValidAddress(String(e.target.value));
     }
   };
 
@@ -70,7 +114,7 @@ const User = () => {
               <input
                 onFocus={(e) => focusHandler(e)}
                 onBlur={(e) => blurHandler(e)}
-                value={name}
+                value={nameError ? name : validName}
                 type="text"
                 name="name"
                 className={styles.input}
@@ -85,14 +129,14 @@ const User = () => {
               <input
                 onFocus={(e) => focusHandler(e)}
                 onBlur={(e) => blurHandler(e)}
-                value={country}
+                value={addressError ? address : validAddress}
                 type="text"
-                name="country"
+                name="address"
                 className={styles.input}
                 onChange={(e) => сountryHandler(e)}
               />
-              {countryError && countryDirty && <Incorrect />}
-              {!countryError && countryDirty && <Correct />}
+              {addressError && addressDirty && <Incorrect />}
+              {!addressError && addressDirty && <Correct />}
             </div>
           </li>
           <li className={styles.language}>
@@ -105,5 +149,4 @@ const User = () => {
     </div>
   );
 };
-
 export default User;
