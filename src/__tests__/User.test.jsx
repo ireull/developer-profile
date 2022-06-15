@@ -22,7 +22,6 @@ describe("<User/>", () => {
 
     fireEvent.change(userNameInput, { target: { value: "Tom Cruse" } });
     expect(userNameInput.value).toBe("Tom Cruse");
-    screen.debug();
   });
 
   test("address is changable", () => {

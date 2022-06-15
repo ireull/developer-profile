@@ -6,7 +6,7 @@ const Incorrect = () => {
   return (
     <div className={styles.incorrect}>
       <div className={styles.incorrectIcon} />
-      <div className={styles.errorText}>Error Description </div>
+      <div className={styles.errorText}>Invalid character </div>
     </div>
   );
 };

@@ -1,6 +1,11 @@
 .map {
   width: 50%;
   height: 200px;
+  border-radius: 10px;
+}
+.wrappMap {
+  width: 75%;
+  height: 100%;
   overflow: hidden;
   border-radius: 10px;
 }
@@ -10,5 +15,23 @@
     width: 100% !important;
     margin-top: 100px;
     margin-bottom: 50px;
+  }
+  .wrappMap {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 1149px) {
+  .wrappMap {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 1149px) {
+  .wrappMap {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .wrappMap {
+    width: 80%;
   }
 }

@@ -13,7 +13,6 @@ function App() {
     DeveloperData.skills,
     "user-skills"
   );
-
   const [latitude, setLatitude] = useLocalStorage(locationMap.lat, "use-lnt");
   const [longitude, setLongitude] = useLocalStorage(
     locationMap.lng,
