@@ -1,4 +1,12 @@
-# Developer social page app 
-Was created using React JS. This app allows users see information about developer and change it.
+# Developer social page app
 
-Link to deployed app: 
+    Небольшое приложение-анкета, реализовано с помощью библиотеки React.
+
+Для взаимодействия с картой использовал изначально yandex-maps, однако по ряду причин
+пришлось перейти на google-map-react.
+Для геокодина строк в координаты использовал api trueway-geocoding.p.rapidapi.com
+взаимодействия и один GET с помощью fetch
+
+    Демо-страницы можно посмотреть здесь:
+
+https://developer-profile-1yk23nmwe-ireull.vercel.app/
