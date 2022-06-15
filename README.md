@@ -1,11 +1,11 @@
-<h1 class="code-line" data-line-start=0 data-line-end=1 ><a id="Developer_social_page_app_0"></a>Developer social page app</h1>
-<p class="has-line-data" data-line-start="2" data-line-end="3">Приложение-профиль разработчика, реализовано с помощью библиотеки React.</p>
-<p class="has-line-data" data-line-start="4" data-line-end="8">Для взаимодействия с картой использовал изначально yandex-maps, однако по ряду причин<br>
+<p class="has-line-data" data-line-start="0" data-line-end="2">Developer social page app<br>
+Приложение-профиль разработчика, реализовано с помощью библиотеки React.</p>
+<p class="has-line-data" data-line-start="3" data-line-end="7">Для взаимодействия с картой использовал изначально yandex-maps, однако по ряду причин<br>
 пришлось перейти на google-map-react.<br>
 Для геокодина строк в координаты использовал api trueway-geocoding.p.rapidapi.comи и для<br>
 одного GET запроса использовал fetch.</p>
-<p class="has-line-data" data-line-start="9" data-line-end="10">Демо-страницы можно посмотреть здесь: <a href="http://example.comhttps://developer-profile-1yk23nmwe-ireull.vercel.app">developer profile</a></p>
-<p class="has-line-data" data-line-start="12" data-line-end="23">Были реализованы следующие вещи:<br>
+<p class="has-line-data" data-line-start="8" data-line-end="9">Демо-страницы можно посмотреть здесь: developer profile</p>
+<p class="has-line-data" data-line-start="10" data-line-end="21">Были реализованы следующие вещи:<br>
 1.Редактирование поля Имени и Страны и их валидацию, сохранение происходит состояния происходит<br>
 после потери фокуса.<br>
 2.Добавление и удаление скилов пользователя<br>
@@ -16,4 +16,5 @@
 к выбранному местоположению на карте.<br>
 6.Размещение данные я поместил в localStorage, написав свой хук useLocalStorage.<br>
 7.Семантичность на странице</p>
-<p class="has-line-data" data-line-start="24" data-line-end="25">Для преобразования страницы в js to pdf, использовал jsPdf, но из-за того, что jsPdf плохо поддерживает реакт 17+ съезжает карта</p>
+<p class="has-line-data" data-line-start="22" data-line-end="23">Я добавил typescript и протипизировал данные, их разменсит по архитектурному стилю в папку <a href="https://github.com/ireull/developer-profile/tree/master/src/domain">domain</a></p>
+<p class="has-line-data" data-line-start="24" data-line-end="25">Для преобразования страницы в js to pdf, использовал jsPdf, но из-за того, что jsPdf плохо поддерживает реакт 17+ карта немного съезжает</p>
