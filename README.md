@@ -1,4 +1,4 @@
-<p class="has-line-data" data-line-start="0" data-line-end="2">Developer social page app<br>
+###Developer social page app<b
 Приложение-профиль разработчика, реализовано с помощью библиотеки React.</p>
 <p class="has-line-data" data-line-start="3" data-line-end="7">Для взаимодействия с картой использовал изначально yandex-maps, однако по ряду причин<br>
 пришлось перейти на google-map-react.<br>
