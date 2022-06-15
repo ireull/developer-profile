@@ -3,12 +3,14 @@ import Experience from "../Experience/Experience";
 import MoreInfo from "../MoreInfo/MoreInfo";
 import Portfolio from "../Portfolio/Portfolio";
 import SampleCode from "../SampleCode/SampleCode";
-import Quote from "../Quote/Quote";
 
 import styles from "./Main.module.scss";
 import Map from "../Map/Map";
+import { DeveloperData } from "../../data/data.ts";
+import QuoteList from "../QuoteList/QuoteList";
 
 const Main = () => {
+  const { favoriteQuotes } = DeveloperData;
   return (
     <main className={styles.main}>
       <section className={styles.mainTop}>
@@ -23,14 +25,7 @@ const Main = () => {
       </section>
       <section className={styles.mainBottom}>
         <div className={styles.quotes}>
-          <Quote
-            title="The Most Amaizing..."
-            subtitle="The only true wisdom is in knowing you know nothing..."
-          />
-          <Quote
-            title="In clients I look for..."
-            subtitle="There is only one good, knowledge, and one evil, ignorance."
-          />
+          <QuoteList favoriteQuotes={favoriteQuotes} />
         </div>
         <Map />
       </section>

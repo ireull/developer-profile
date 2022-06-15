@@ -14,15 +14,15 @@ const ExpContent = ({ name, exp }) => {
   };
 
   const changeExp = (e) => {
-    if (Number(e.target.value > 0)) {
-      setNewExp(Number(e.target.value));
+    if (e.target.value > 0) {
+      setNewExp(e.target.value);
     }
     return;
   };
 
   const updateSkills = skills.map((item) => {
     if (item.name === name) {
-      return { ...item, ["exp"]: Number(newExp) };
+      return { ...item, ["exp"]: newExp };
     }
     return item;
   });
@@ -30,8 +30,7 @@ const ExpContent = ({ name, exp }) => {
   useEffect(() => {
     if (isInputActive) {
       inputRef.current.focus();
-    }
-    if (!isInputActive) {
+    } else {
       setSkills([...updateSkills]);
     }
   }, [isInputActive, newExp]);

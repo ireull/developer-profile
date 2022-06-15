@@ -36,7 +36,7 @@ const User = () => {
   }, [nameDirty]);
 
   const updateCoordinates = () => {
-    const encodedAddress = encodeURI(address);
+    const encodedAddress = encodeURI(validAddress);
 
     fetch(
       `https://trueway-geocoding.p.rapidapi.com/Geocode?address=${encodedAddress}&language=en`,
@@ -70,8 +70,6 @@ const User = () => {
     }
   };
 
-  /** focus out */
-
   const blurHandler = (event) => {
     switch (event.target.name) {
       case "name":
@@ -83,7 +81,6 @@ const User = () => {
         break;
     }
   };
-  /** Validation */
 
   const nameHandler = (e) => {
     const validate = /[^A-Za-z 0-9 А-Яа-я]/i;
@@ -124,6 +121,7 @@ const User = () => {
                 name="name"
                 className={styles.input}
                 onChange={(e) => nameHandler(e)}
+                aria-label="name-input"
               />
               {nameError && nameDirty && <Incorrect />}
               {nameDirty && !nameError && <Correct />}
@@ -139,6 +137,7 @@ const User = () => {
                 name="address"
                 className={styles.input}
                 onChange={(e) => сountryHandler(e)}
+                aria-label="address-input"
               />
               {addressError && addressDirty && <Incorrect />}
               {!addressError && addressDirty && <Correct />}

@@ -1,40 +1,42 @@
-interface User {
+export interface User {
     id:number;
     fullName: string;
     language:string;
     skills:Skill[]
     picture: string;
     portfolio:Portfolio[]
-    location:Location[];
-    samplCode: string;
+    location:string;
+    locationMap:LocationMap[]
+    samplCode?: string;
     availability:string;
     environment: Environment[];
     favoriteQuotes : Quote[];
 }
 
-interface Skill {
+export interface Skill {
     name:string;
     exp?:number;
 }
 
-interface Portfolio {
+export interface Portfolio {
     title:string;
     url:string;
 }
 
-interface Location {
-    long:string;
-    lat:string;
-}
+export type Environment = string;
 
-type Environment = string;
-
-interface Quote {
+export interface Quote {
+    id:number;
     title:string;
     text:string;
 }
 
-interface IMap {
+export interface IMap {
     lng:string;
     lat:string;
+}
+
+export interface LocationMap {
+    lat:number;
+    lng:number;
 }

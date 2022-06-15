@@ -2,8 +2,9 @@ import React, { useContext } from "react";
 import User from "../User/User";
 import Pdf from "react-to-pdf";
 
-import styles from "./Header.module.scss";
 import UserContext from "../../context/UserContext";
+
+import styles from "./Header.module.scss";
 
 const Header = () => {
   const { pdfRef } = useContext(UserContext);
@@ -32,6 +33,3 @@ const Header = () => {
 };
 
 export default Header;
-{
-  /* <img src="img/print.svg" alt="" className={styles.printIcon} /> */
-}

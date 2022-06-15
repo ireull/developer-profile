@@ -52,6 +52,7 @@ const SkillList = () => {
             onChange={skillValue}
             onKeyDown={addSkill}
             ref={inputRef}
+            aria-label="addSkill"
           />
         </div>
       )}

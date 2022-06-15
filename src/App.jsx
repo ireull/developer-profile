@@ -1,28 +1,22 @@
 import { useRef, useState } from "react";
+import { useLocalStorage } from "./hooks/useLocalStorage";
 
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
 
 import UserContext from "./context/UserContext";
-
-import { useLocalStorage } from "./hooks/useLocalStorage";
+import { DeveloperData } from "./data/data.ts";
 
 function App() {
+  const { locationMap } = DeveloperData;
   const [skills, setSkills] = useLocalStorage(
-    [
-      { name: "Ruby", exp: 2 },
-      { name: "PHP", exp: 6 },
-      { name: "JavaScript", exp: 4 },
-    ],
+    DeveloperData.skills,
     "user-skills"
   );
 
-  const [latitude, setLatitude] = useLocalStorage(
-    "Portland, Oregon, USA",
-    "use-lnt"
-  );
+  const [latitude, setLatitude] = useLocalStorage(locationMap.lat, "use-lnt");
   const [longitude, setLongitude] = useLocalStorage(
-    "Portland, Oregon, USA",
+    locationMap.lng,
     "user-lng"
   );
   const [isFetching, setIsFetching] = useState(false);
