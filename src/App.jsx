@@ -22,7 +22,19 @@ function App() {
 
   const pdfRef = useRef(null);
 
-  const skillsSort = skills.sort((a, b) => (a.exp > b.exp ? -1 : 1));
+  const compare = (a, b) => {
+    if (a < b) {
+      return 1;
+    }
+    if (a > b) {
+      return -1;
+    }
+    return 0;
+  };
+
+  const skillsSort = skills.sort((a, b) =>
+    compare(Number(a.exp), Number(b.exp))
+  );
 
   return (
     <UserContext.Provider
