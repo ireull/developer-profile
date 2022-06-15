@@ -1,5 +1,5 @@
-###Developer social page app
-Приложение-профиль разработчика, реализовано с помощью библиотеки React.</p>
+<h3 class="code-line" data-line-start=0 data-line-end=1 ><a id="Developer_social_page_app_0"></a>Developer social page app</h3>
+<p class="has-line-data" data-line-start="1" data-line-end="2">Приложение-профиль разработчика, реализовано с помощью библиотеки React.</p>
 <p class="has-line-data" data-line-start="3" data-line-end="7">Для взаимодействия с картой использовал изначально yandex-maps, однако по ряду причин<br>
 пришлось перейти на google-map-react.<br>
 Для геокодина строк в координаты использовал api trueway-geocoding.p.rapidapi.comи и для<br>
