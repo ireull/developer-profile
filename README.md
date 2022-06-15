@@ -8,7 +8,7 @@
 одного GET запроса использовал fetch.
 
 Демо-страницы можно посмотреть здесь:
-[developer profile]:http://example.comhttps://developer-profile-1yk23nmwe-ireull.vercel.app/
+[developer profile](http://example.comhttps://developer-profile-1yk23nmwe-ireull.vercel.app)
 
 - ul.Также реализовал:
   1.Редактирование поля Имени и Страны и их валидацию, сохранение происходит состояния происходит
