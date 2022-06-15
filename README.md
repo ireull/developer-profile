@@ -4,7 +4,7 @@
 пришлось перейти на google-map-react.<br>
 Для геокодина строк в координаты использовал api trueway-geocoding.p.rapidapi.comи и для<br>
 одного GET запроса использовал fetch.</p>
-<p class="has-line-data" data-line-start="8" data-line-end="9">Демо-страницы можно посмотреть здесь: developer profile</p>
+<p class="has-line-data" data-line-start="8" data-line-end="9">Демо-страницы можно посмотреть здесь: <a href="https://github.com/ireull/developer-profile/tree/master/src/domain">developer profile</a></p>
 <p class="has-line-data" data-line-start="10" data-line-end="21">Были реализованы следующие вещи:<br>
 1.Редактирование поля Имени и Страны и их валидацию, сохранение происходит состояния происходит<br>
 после потери фокуса.<br>
@@ -16,5 +16,7 @@
 к выбранному местоположению на карте.<br>
 6.Размещение данные я поместил в localStorage, написав свой хук useLocalStorage.<br>
 7.Семантичность на странице</p>
-<p class="has-line-data" data-line-start="22" data-line-end="23">Я добавил typescript и протипизировал данные, их разменсит по архитектурному стилю в папку <a href="https://github.com/ireull/developer-profile/tree/master/src/domain">domain</a></p>
-<p class="has-line-data" data-line-start="24" data-line-end="25">Для преобразования страницы в js to pdf, использовал jsPdf, но из-за того, что jsPdf плохо поддерживает реакт 17+ карта немного съезжает</p>
+<p class="has-line-data" data-line-start="22" data-line-end="24">Я добавил typescript и протипизировал данные, их разменсит по архитектурному стилю в папку<br>
+<a href="https://github.com/ireull/developer-profile/tree/master/src/domain">domain</a></p>
+<p class="has-line-data" data-line-start="25" data-line-end="26">Еще добавил <a href="https://github.com/ireull/developer-profile/tree/master/src/__tests__">тесты</a> , использовал библиотеку <a href="https://testing-library.com/docs/react-testing-library/intro/">React Testing Library</a></p>
+<p class="has-line-data" data-line-start="27" data-line-end="28">Для преобразования страницы в js to pdf, использовал jsPdf, но из-за того, что jsPdf плохо поддерживает реакт 17+ карта немного съезжает</p>
